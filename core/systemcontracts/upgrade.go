@@ -49,7 +49,7 @@ const (
 	mainNet    = "Mainnet"
 	chapelNet  = "Chapel"
 	rialtoNet  = "Rialto"
-	defaultNet = "Default"
+	defaultNet = "Mainnet"
 )
 
 var (
