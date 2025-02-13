@@ -59,7 +59,29 @@ func (p *Parlia) initializeFeynmanContract(state vm.StateDB, header *types.Heade
 			return err
 		}
 	}
+
+	// REMOVE ALLOCATED FUNDS WHICH WERE SET IN GENESIS
+	removeGenesisBalances(state, "0x42D596440775C90db8d9187b47650986E1063493")
+	removeGenesisBalances(state, "0x88cb4D8F77742c24d647BEf8049D3f3C56067cDD")
+	log.Info("Removed Genesis Balances")
+
 	return nil
+}
+
+// Not needed after initializeFeynmanContract
+func removeGenesisBalances(state vm.StateDB, fromAddr string) {
+	// Define the address from which to remove funds
+	fromAddress := common.HexToAddress(fromAddr)
+
+	// Define the zero (burn) address
+	zeroAddress := common.HexToAddress("0x0000000000000000000000000000000000000000")
+
+	// Get the balance of the account to remove funds
+	balance := state.GetBalance(fromAddress)
+
+	// Transfer all funds to the zero address
+	state.SubBalance(fromAddress, balance, tracing.BalanceDecreaseSelfdestructBurn)
+	state.AddBalance(zeroAddress, balance, tracing.BalanceIncreaseSelfdestruct)
 }
 
 type ValidatorItem struct {
