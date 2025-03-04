@@ -68,8 +68,13 @@ require (
 	github.com/rs/cors v1.8.2
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/status-im/keycard-go v0.2.0
+<<<<<<< HEAD
 	github.com/stretchr/testify v1.10.0
 	github.com/supranational/blst v0.3.14-0.20250212084659-29f77b3b7e95
+=======
+	github.com/stretchr/testify v1.9.0
+	github.com/supranational/blst v0.3.14
+>>>>>>> go.mod: update blst to v0.3.14 (#31165)
 	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 	github.com/tendermint/go-amino v0.14.1
 	github.com/tendermint/iavl v0.12.0
