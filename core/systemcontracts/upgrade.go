@@ -792,7 +792,7 @@ func init() {
 			},
 			{
 				ContractAddr: common.HexToAddress(SystemRewardContract),
-				CommitUrl:    "https://github.com/bnb-chain/bsc-genesis-contract/commit/020c0459e37d1f9d635c1cff86dd1099ab1383fa",
+				CommitUrl:    "https://github.com/Donk3ys/bsc-genesis-contract/commit/6d0b1064fe1ff9ee0cb50bdaa2ede826976b773b",
 				Code:         pascal.MainnetSystemRewardContract,
 			},
 			{
